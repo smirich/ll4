@@ -1,0 +1,10 @@
+OK, Let's build a Spring boot project
+We're just going to use Spring web for this one
+what is the best folder structure for a springboot project
+ -- now, here is the thing--frameworks are great...but frameworks are like cults...at the begginning, "Hey, free coolaide!".  Get in too deep, and you've given up all of your wordly possessions and you are calling yourself moonbeam.
+Good stuff - Let's go ahead and lock this down in our version control
+
+where is the best place to put unit tests in a springboot project
+generate tests, passing a String
+So, I don't love the naming of these tests....let's refactor... I like  given_then_should but, if we do this consistently, we don't really need those words, do we?
+        notice that copilot takes my lead 
