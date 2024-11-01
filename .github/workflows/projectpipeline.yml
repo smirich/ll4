@@ -35,4 +35,6 @@ jobs:
       - name: Build and test
         run: |
           ls  
-          mvn clean verify
+
+         
+          mvn - f demo/pom.xml clean verify
