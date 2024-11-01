@@ -1,5 +1,7 @@
 package com.example.demo.managers;
 
+import ch.qos.logback.core.joran.sanity.Pair;
+
 public class LinkedListManager<T> {
 
     private int size;
@@ -18,7 +20,8 @@ public class LinkedListManager<T> {
 
     public boolean addAtIndex(T payload, int index)
     {
-        if (index > size + 1)
+
+        if (index > size + 1 || index < 0)
         {
             return false;
         }
@@ -45,7 +48,7 @@ public class LinkedListManager<T> {
 
     public T getAtIndex(int index)
     {
-        if (index > size)
+        if (index > size - 1)
         {
             return null;
         }
@@ -63,12 +66,6 @@ public class LinkedListManager<T> {
         return size;
     }
 
-    // public T removeAtIndex(int index)
-    // {
-    //     size--;
-    //     return null;
-    // }
-
     @Override
     public String toString()
     {
@@ -76,17 +73,10 @@ public class LinkedListManager<T> {
         String returnString = "";
         for (int i = 0; i < size; i++)
         {
-            returnString += getAtIndex(i) + ",";
+            returnString += getAtIndex(i) + " ";
             shuttle = shuttle.nextNode;
         }
         return returnString;
-        // String returnValue = "";
-        // Node shuttle = head;
-        // while (head != null)
-        // {
-        //     returnValue += shuttle.payload;
-        //     shuttle = shuttle.nextNode;
-        // }
-        // return returnValue;
+
     }
 }
