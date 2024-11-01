@@ -1,8 +1,41 @@
 OK, Let's build a Spring boot project
 We're just going to use Spring web for this one
-what is the best folder structure for a springboot project
- -- now, here is the thing--frameworks are great...but frameworks are like cults...at the begginning, "Hey, free coolaide!".  Get in too deep, and you've given up all of your wordly possessions and you are calling yourself moonbeam.
 Good stuff - Let's go ahead and lock this down in our version control
+Now, let's build a Controller
+hmm...where should we put it?
+Now, the temptation is to just add the required end points and then write our coollinkedList code in them.
+So, how many of you were tempted to place the CoolLinkedList logic in the controller?
+
+ -- now, here is the thing--frameworks are great...but frameworks are like cults...at the begginning, "Hey, free coolaide!".  Get in too deep, and you've given up all of your wordly possessions and you are calling yourself moonbeam.
+
+ let's ask copilot where we should put that logic.
+        what is the best folder structure for a springboot project?
+
+See, we can break any project down into two, broad categories
+        - Stuff that talks to the outside world
+        -Stuff that is part of our business logic.  Sometimes people call in domain logic.  Basically, anything that makes our program do what it's supposed to do.
+        For example, if we were writing a Banking project, there would be the part that talks to the customer so that they can ask our system for money, or to make a deposit, or transfer money etc.
+
+        However, the actual code to do thos things, makeDeposit, makeWithdrawal etc, should be separate from the parts of the program that are dealing with outside world events.  Why?
+        Well, I'm pretty old, so I remember the days when we didn't have ATMs.  The only way to get money from the bank was to go into a branch, fill out a physical slip, asking for money from the account.  The only person that interacted with the bank software was the bank teller.
+
+        Now, back in those days, you can imagine that it would be tempting to write all of the code together since the teller was the only one able to interact with the system.  I makes things way easier if we can write it all together, right?
+
+        Well now, fast forward to today where we can use an ATM.  If our business logic was all tied together with the logic to talk with the teller, we would have had a real mess to then build code for the ATM.  Essentially, we would be looking at a complete rewrite.
+
+        Next, we added internet banking so that we can do banking online.  Once again, if our logic code was tied together with our inteaction code, we would have a huge mess.
+
+        Next, came baning apps on your phone.  Again, big problems!
+
+        What's next?  I can forsee a time when we will each have a personal AI agent that travel around with us.  I've decide that I'll call mine Lisa for lifelike interactive software agent. Anyway, this will require yet a new way to interact with our banking software as we ask the AI agent to transfer money for us.
+
+        Now, if we had written that original code so that all of the banking software, the business logic, or domain logic - if all of that code was written so that it had no dependencies with the outside world, our life would be so much easier to just create a new layer of software to deal with the outside world and interact with our business logic in the exact same way.  None of our actual banking logic needs to change at all!  We simple graft on another outward facing layer of code that interacts with the business logic in the exact same way!  No need to ever change our important banking logic.
+
+
+Let's build the CoolLinkedList class first  Cool!
+
+
+
 
 where is the best place to put unit tests in a springboot project
 generate tests, passing a String

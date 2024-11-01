@@ -21,7 +21,7 @@ public class LinkedListManagerTest {
     }
 
     @Test
-    public void givenEmptyList_addAtIndex0_sizeReturns2()
+    public void givenEmptyList_addAtIndex0Twice_sizeReturns2()
     {
         linkedListManager.addAtIndex("A", 0);
         linkedListManager.addAtIndex("B", 0);
@@ -54,12 +54,29 @@ public class LinkedListManagerTest {
     }
 
     @Test
+    public void givenListWith3Nodes_getAtIndex2shouldReturnNull()
+    {
+        linkedListManager.addAtIndex("A", 0);
+        linkedListManager.addAtIndex("B", 0);
+        linkedListManager.addAtIndex("C", 0);
+        assertEquals(null, linkedListManager.getAtIndex(3));
+    }
+
+    @Test
     public void givenListWith2Nodes_addAtIndex1_getAtIndex1IsCorrect()
     {
-        // linkedListManager.addAtIndex("A", 0);
+        linkedListManager.addAtIndex("A", 0);
         linkedListManager.addAtIndex("B", 0);
         linkedListManager.addAtIndex("C", 1);
         assertEquals("C", linkedListManager.getAtIndex(1));
+    }
+
+    @Test
+    public void givenListWith2Nodes_getAtIndex_ReturnsNull()
+    {
+        linkedListManager.addAtIndex("A", 0);
+        linkedListManager.addAtIndex("B", 0);
+        assertEquals(null, linkedListManager.getAtIndex(2));
     }
 
     @Test
@@ -71,16 +88,16 @@ public class LinkedListManagerTest {
     }
 
     @Test
-    public void givenEmptyList_addAtIndex0_toStringReturnsCorrectString()
-    {
-        linkedListManager.addAtIndex("A", 0);
-        assertEquals("A,", linkedListManager.toString());
-    }
-
-    @Test
     public void givenEmptyList_toStringReturnsEmptyString()
     {
         assertEquals("", linkedListManager.toString());
+    }
+
+    @Test
+    public void givenEmptyList_addAtIndex0_toStringReturnsCorrectString()
+    {
+        linkedListManager.addAtIndex("A", 0);
+        assertEquals("A ", linkedListManager.toString());
     }
 
     @Test
@@ -92,41 +109,7 @@ public class LinkedListManagerTest {
         linkedListManager.addAtIndex("D", 3);
         linkedListManager.addAtIndex("E", 2);
         linkedListManager.addAtIndex("F", 5);
-        assertEquals("B,C,E,A,D,F,", linkedListManager.toString());
+        assertEquals("B C E A D F ", linkedListManager.toString());
     }
-
-    // @Test
-    // public void givenListWithTwoNodes_removeAtIndex0_returns1()
-    // {
-    //     linkedListManager.addAtIndex("Element 1");
-    //     linkedListManager.addAtIndex("Element 2");
-    //     linkedListManager.removeAtIndex(0);
-    //     assertEquals(1, linkedListManager.size());
-    // }
-
-    // @Test
-    // public void listWithOneNode_addToEnd_returnsIndexOf2()
-    // {
-    //     int index = linkedListManager.addAtIndex("Element 1");
-    //     assertEquals(1, index);
-    // }
-
-    // @Test
-    // public void givenListWithOneNode_toStringReturnsCorrectString()
-    // {
-    //     linkedListManager.addAtIndex("Element 1");
-
-    //     String expectedString = "Element1,";
-    //     assertEquals(expectedString, linkedListManager.toString());
-    // }
-
-    // @Test
-    // public void givenListWithTwoNodes_toStringReturnsCorrectString()
-    // {
-    //     linkedListManager.addAtIndex("Element 1");
-    //     linkedListManager.addAtIndex("Element 2");
-    //     String expectedString = "Element 2, Element 1,";
-    //     assertEquals(expectedString, linkedListManager.toString());
-    // }
 
 }
