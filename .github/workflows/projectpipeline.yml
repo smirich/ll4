@@ -35,4 +35,4 @@ jobs:
       - name: Build and test
         run: |
           ls  
-          mvn -f /ll4 clean verify
+          mvn -f .. clean verify
